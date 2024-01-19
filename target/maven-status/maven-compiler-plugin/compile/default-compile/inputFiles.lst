@@ -1,0 +1,6 @@
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/configuration/CorsConfiguration.java
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/controllers/TaskController.java
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/TodoBackendApplication.java
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/models/entities/Task.java
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/services/TaskService.java
+/home/harrison/tasks-backend-deploy/src/main/java/com/betrybe/todobackend/models/repositories/TaskRepository.java

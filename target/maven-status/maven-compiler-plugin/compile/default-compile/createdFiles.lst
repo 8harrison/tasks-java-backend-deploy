@@ -1,0 +1,6 @@
+com/betrybe/todobackend/services/TaskService.class
+com/betrybe/todobackend/models/entities/Task.class
+com/betrybe/todobackend/models/repositories/TaskRepository.class
+com/betrybe/todobackend/configuration/CorsConfiguration.class
+com/betrybe/todobackend/TodoBackendApplication.class
+com/betrybe/todobackend/controllers/TaskController.class

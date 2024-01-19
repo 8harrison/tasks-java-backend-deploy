@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TaskService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">todo-backend</a> &gt; <a href="index.source.html" class="el_package">com.betrybe.todobackend.services</a> &gt; <span class="el_source">TaskService.java</span></div><h1>TaskService.java</h1><pre class="source lang-java linenums">package com.betrybe.todobackend.services;
+
+import com.betrybe.todobackend.models.entities.Task;
+import com.betrybe.todobackend.models.repositories.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class TaskService {
+    @Autowired
+    private TaskRepository taskRepository;
+
+<span class="fc" id="L16">    public TaskService(TaskRepository taskRepository) {</span>
+<span class="fc" id="L17">        this.taskRepository = taskRepository;</span>
+<span class="fc" id="L18">    }</span>
+
+    public Task create(Task task) {
+<span class="fc" id="L21">        return taskRepository.save(task);</span>
+    }
+
+    public List&lt;Task&gt; getAll() {
+<span class="fc" id="L25">        return taskRepository.findAll();</span>
+    }
+
+    public Optional&lt;Task&gt; getById(Long id) {
+<span class="fc" id="L29">        return taskRepository.findById(id);</span>
+    }
+
+    public Optional&lt;Task&gt; update(Long id, Task task) {
+<span class="fc" id="L33">        Optional&lt;Task&gt; optionalTask = taskRepository.findById(id);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (optionalTask.isEmpty()) {</span>
+<span class="fc" id="L35">            return Optional.empty();</span>
+        }
+<span class="fc" id="L37">        task.setId(id);</span>
+<span class="fc" id="L38">        return Optional.ofNullable(taskRepository.save(task));</span>
+    }
+
+    public void delete(Long id) {
+<span class="fc" id="L42">        taskRepository.deleteById(id);</span>
+<span class="fc" id="L43">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
