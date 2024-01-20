@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Verificar cobertura de testes
     steps:
-      name: Baixar o repositório e entrar nessa branch que o job está rodando
-      uses: actions/checkouts@v3
+     - name: Baixar o repositório e entrar nessa branch que o job está rodando
+       uses: actions/checkouts@v3
+      
+     - name: Instala o Java
+       uses: actions/setup-java@v3
+       with: 
+        distribution: 'temurin'
+        java-version: '17'
 
-  name: Instala o Java
-  uses: actions/setup-java@v3
-  with: 
-     distribution: 'temurin'
-     java-version: '17'
-
-     name: Valida cobertura dos testes
-     run: mvn clean verify
+     - name: Valida cobertura dos testes
+       run: mvn clean verify
 
   Deploy:
     runs-on: ubuntu-latest
