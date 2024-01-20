@@ -4,7 +4,6 @@ on:
       [opened, synchronize]
 
 jobs:
-
   Validate-tests:
     runs-on: ubuntu-latest
     name: Verificar cobertura de testes
