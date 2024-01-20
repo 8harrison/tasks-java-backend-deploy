@@ -10,7 +10,7 @@ jobs:
     name: Verificar cobertura de testes
     steps:
      - name: Baixar o repositório e entrar nessa branch que o job está rodando
-       uses: actions/checkouts@v3
+       uses: actions/checkout@v3
       
      - name: Instala o Java
        uses: actions/setup-java@v3
